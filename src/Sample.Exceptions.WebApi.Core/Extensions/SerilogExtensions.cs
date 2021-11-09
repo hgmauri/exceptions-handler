@@ -11,7 +11,7 @@ public static class SerilogExtensions
     {
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configuration)
-            .Enrich.WithProperty("ApplicationName", $"API Exceptions - {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}")
+            .Enrich.WithProperty("ApplicationName", $"API Exceptions - {Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT")}")
             .Enrich.FromLogContext()
             .Enrich.WithMachineName()
             .Enrich.WithEnvironmentUserName()

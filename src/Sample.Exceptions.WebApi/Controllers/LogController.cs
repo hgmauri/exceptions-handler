@@ -6,20 +6,9 @@ namespace Sample.Exceptions.WebApi.Controllers;
 [Route("api/[controller]")]
 public class LogController : Controller
 {
-    public LogController()
-    {
-    }
-
-    [HttpPost("sample")]
-    public IActionResult PostSampleData()
-    {
-        return Ok(new { Result = "Data successfully registered with Elasticsearch" });
-    }
+    [HttpPost("ok")]
+    public IActionResult PostSampleData() => Ok(new { Result = "ok" });
 
     [HttpGet("exception")]
-    public IActionResult GetByName()
-    {
-        //Sample middlerare exception log
-        throw new Exception("Não foi possível fazer o get.");
-    }
+    public IActionResult GetByName() => throw new Exception("Não foi possível realizar o GetByName.");
 }
